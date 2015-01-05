@@ -129,6 +129,7 @@ echo -e "\033[0;32m[Tomcat]\033[0;39m"
 cd /var/lib/tomcat/webapps
 wget https://github.com/takezoe/gitbucket/releases/download/2.7/gitbucket.war
 wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
+/sbin/service tomcat start
 chkconfig tomcat on
 
 

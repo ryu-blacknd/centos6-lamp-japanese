@@ -7,6 +7,12 @@ CentOS 6 にLAMP環境を構築し、さらに OpenJDK と Tomcat も構築す�
 
 Tomcat と Apache は AJP で通信し、外からのアクセスは Apache が受け持ちます。
 
+詳細はブログを御覧ください。
+
+※記事の末尾に CentOS 6 への対応を書いてあります。
+
+http://blacknd.com/linux-server/centos7-gitbucket-jenkins-auto-deploy/
+
 
 ## 導入方法
 

@@ -141,6 +141,7 @@ chkconfig tomcat on
 # Apache
 #
 echo -e "\033[0;32m[Apache]\033[0;39m"
+sed -i -e 's/^    AllowOverride None/    AllowOverride All/' /etc/httpd/conf/httpd.conf
 cp /tmp/gitbucket.conf /etc/httpd/conf.d/
 cp /tmp/jenkins.conf /etc/httpd/conf.d/
 touch /var/www/html/index.php

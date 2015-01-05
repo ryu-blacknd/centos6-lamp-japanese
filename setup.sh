@@ -76,11 +76,10 @@ make; make install
 # Bash
 #
 echo -e "\033[0;32m[Bash]\033[0;39m"
-cd
-sed -i -e "s/^alias mv='mv -i'$/alias mv='mv -i'\nalias vi='vim'/" .bashrc
-source .bashrc
-sed -i -e "s/^export PATH$/PATH=\$PATH:\/usr\/local\/bin\nexport PATH/" .bash_profile
-source .bash_profile
+sed -i -e "s/^alias mv='mv -i'$/alias mv='mv -i'\nalias vi='vim'/" ~/.bashrc
+source ~/.bashrc
+sed -i -e "s/^export PATH$/PATH=\$PATH:\/usr\/local\/bin\nexport PATH/" ~/.bash_profile
+source ~/.bash_profile
 
 
 #

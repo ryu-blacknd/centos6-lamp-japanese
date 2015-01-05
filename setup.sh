@@ -1,5 +1,8 @@
 #!/bin/sh
 
+cp gitbucket.conf /tmp
+cp jenkins.conf /tmp
+
 #
 # Stop SeLinux
 #
@@ -61,8 +64,7 @@ chkconfig yum-cron on
 #
 echo -e "\033[0;32m[Git]\033[0;39m"
 yum remove -y git
-mkdir -p ~/src
-cd ~/src
+cd /tmp
 wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz
 tar zxf git-1.9.0.tar.gz
 cd git-1.9.0
@@ -75,7 +77,7 @@ make; make install
 #
 echo -e "\033[0;32m[Bash]\033[0;39m"
 cd
-sed -i -e "s/^\export PATH$/PATH=$PATH:/usr/local/bin\nexport PATH/" .bash_profile
+sed -i -e "s/^export PATH$/PATH=\$PATH:\/usr\/local\/bin\nexport PATH/" .bash_profile
 source .bash_profile
 
 
@@ -138,8 +140,8 @@ chkconfig tomcat on
 # Apache
 #
 echo -e "\033[0;32m[Apache]\033[0;39m"
-cp gitbucket.conf /etc/httpd/conf.d/
-cp jenkins.conf /etc/httpd/conf.d/
+cp /tmp/gitbucket.conf /etc/httpd/conf.d/
+cp /tmp/jenkins.conf /etc/httpd/conf.d/
 touch /var/www/html/index.php
 echo "<?php phpinfo(); ?>" >> /var/www/html/index.php
 chown -R apache. /var/www/html

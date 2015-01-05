@@ -28,6 +28,7 @@ http://blacknd.com/linux-server/centos7-gitbucket-jenkins-auto-deploy/
 そしてスクリプトを実行します。
 
 ~~~~
+# cd centos6-lamp-japanese
 # chmod +x setup.sh
 # ./setup.sh
 ~~~~
